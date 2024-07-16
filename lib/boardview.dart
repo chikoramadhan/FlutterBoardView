@@ -375,8 +375,7 @@ class BoardViewState extends State<BoardView> with AutomaticKeepAliveClientMixin
       listWidget = VsScrollbar(
           controller: boardViewController,
           showTrackOnHover: true,// default false
-          thumbVisibility: shown&&widget.lists!.length>1,
-          trackVisibility: shown&&widget.lists!.length>1,
+          isAlwaysShown: shown&&widget.lists!.length>1, // default false
           scrollbarFadeDuration: Duration(milliseconds: 500), // default : Duration(milliseconds: 300)
           scrollbarTimeToFade: Duration(milliseconds: 800),// default : Duration(milliseconds: 600)
           style: widget.scrollbarStyle!=null?VsScrollbarStyle(
