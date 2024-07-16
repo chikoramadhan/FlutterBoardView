@@ -172,10 +172,10 @@ class _MaterialScrollbarState extends RawScrollbarState<_MaterialScrollbar> {
 
   @override
   bool get showScrollbar =>
-      widget.thumbVisibility ?? _scrollbarTheme.thumbVisibility ?? false;
+       false;
 
   bool get _showTrackOnHover =>
-      widget.trackVisibility ?? _scrollbarTheme.trackVisibility ?? false;
+      false;
 
   Set<MaterialState> get _states => <MaterialState>{
     if (_dragIsActive) MaterialState.dragged,
