@@ -140,7 +140,8 @@ class _MaterialScrollbar extends RawScrollbar {
     key: key,
     child: child,
     controller: controller,
-    isAlwaysShown: isAlwaysShown,
+    thumbVisibility: isAlwaysShown,
+    trackVisibility: isAlwaysShown,
     thickness: thickness,
     radius: radius,
     fadeDuration: scrollbarFadeDuration ?? _kScrollbarFadeDuration,
@@ -171,10 +172,10 @@ class _MaterialScrollbarState extends RawScrollbarState<_MaterialScrollbar> {
 
   @override
   bool get showScrollbar =>
-      widget.isAlwaysShown ?? _scrollbarTheme.isAlwaysShown ?? false;
+      widget.thumbVisibility ?? _scrollbarTheme.thumbVisibility ?? false;
 
   bool get _showTrackOnHover =>
-      widget.showTrackOnHover ?? _scrollbarTheme.showTrackOnHover ?? false;
+      widget.trackVisibility ?? _scrollbarTheme.trackVisibility ?? false;
 
   Set<MaterialState> get _states => <MaterialState>{
     if (_dragIsActive) MaterialState.dragged,
